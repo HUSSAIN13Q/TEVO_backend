@@ -5,6 +5,12 @@ const PasswordManager = require("../helpers/PasswordManager");
 const UserSchema = new Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  mytrips: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Trip",
+    },
+  ],
 });
 UserSchema.pre("save", async function (done) {
   if (this.isModified("password")) {
