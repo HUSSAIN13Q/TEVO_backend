@@ -7,6 +7,12 @@ const TripSchema = new Schema({
   end_date: { type: String },
   //image: { type: String, required: true },
   author: { type: Schema.Types.ObjectId, ref: "User" },
+  myExpense: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Expense",
+    },
+  ],
 });
 
 module.exports = model("Trip", TripSchema);
