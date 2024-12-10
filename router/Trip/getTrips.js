@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const trip = await Trip.find().populate("author", "-password -__v ");
+    const trip = await Trip.find()
+      .populate("author", "-password -__v ")
+      .populate("myExpense", "-_v");
 
     res.json(trip);
   } catch (err) {
