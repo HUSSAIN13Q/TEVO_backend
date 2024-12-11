@@ -7,8 +7,9 @@ const { requireAuth, validateRequest } = require("../../middleware");
 
 router.post("/", requireAuth, validateRequest, async (req, res) => {
   try {
-    console.log("req.user:", req.user); // Debug log
+    console.log("req.user:", req.user);
     const { destination, budget, start_date, end_date } = req.body;
+    console.log(req.body);
     const UserDoc = await User.findById(req.user.id);
     if (!UserDoc) {
       return res.status(404).json({ message: "user not found" });
