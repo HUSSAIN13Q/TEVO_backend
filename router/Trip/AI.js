@@ -60,9 +60,11 @@ ${Object.entries(categorizedExpenses)
   .join("\n")}
 
 Please provide:
+
 1. A review of how well the budget was managed.
-2. Tips for cutting unnecessary costs.
+2. Tips for optimizing expenses.
 3. Recommendations for budget-friendly activities or must-visit spots in ${destination}.
+-don't add the titles and the number points.
 `;
     const categorySpending = myExpense.reduce((acc, expense) => {
       acc[expense.category] = (acc[expense.category] || 0) + expense.amount;
