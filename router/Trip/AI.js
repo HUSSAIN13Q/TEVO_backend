@@ -50,7 +50,9 @@ router.get("/:trip_id/ai-analysis", async (req, res) => {
 Analyze the following trip details:
 - Destination: ${destination}
 - Budget: $${budget}
-- Dates: ${start_date.toDateString()} to ${new Date(end_date).toDateString()}
+- Dates: ${new Date(start_date).toDateString()} to ${new Date(
+      end_date
+    ).toDateString()}
 - Total Expenses: $${totalExpenses}
 - Expense Breakdown:
 ${Object.entries(categorizedExpenses)
